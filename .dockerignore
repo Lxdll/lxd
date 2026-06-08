@@ -1,0 +1,16 @@
+.git
+.github
+.next
+.pnpm-store
+node_modules
+out
+build
+coverage
+.DS_Store
+*.log
+*.pem
+.env
+.env.*
+docker-compose.yml
+deploy
+README.md
