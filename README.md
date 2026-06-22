@@ -48,7 +48,7 @@ Add these GitHub repository secrets before the first deployment:
 - `GHCR_USERNAME`: GitHub username used by the server to pull packages.
 - `GHCR_TOKEN`: GitHub token with at least `read:packages`.
 
-The server needs Docker, the Docker Compose plugin, and Nginx. The deployed container binds to `127.0.0.1:3000`, so point Nginx at that address. See `deploy/nginx.example.conf` for a starter server block.
+The server needs Docker and the Docker Compose plugin. Nginx runs in the compose stack, publishes ports `80` and `443`, redirects HTTP traffic to `https://luxudong.me`, and proxies HTTPS traffic to the app service at `http://lxd:3000`. The workflow copies `deploy/nginx.example.conf` to `/opt/lxd/nginx.conf` during deployment and uses the Let's Encrypt certificate under `/etc/letsencrypt/live/luxudong.me`.
 
 Rollback is done by editing `/opt/lxd/.env` on the server and changing `APP_IMAGE` to a previous commit SHA image tag, then running:
 
