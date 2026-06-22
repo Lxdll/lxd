@@ -19,7 +19,7 @@ export default function Home() {
         <PageColumn>
           <Eyebrow>Programmer Portfolio</Eyebrow>
           <DisplayTitle>
-            姓名 / Name
+            姓名1 / Name
             <br />
             Software Developer
           </DisplayTitle>
